@@ -17,7 +17,7 @@ public class Customer implements IDisplay {
 		this.Lname = lname;
 		this.FullName = fullName;
 		this.EmailID = email;
-		this.bList=new ArrayList<Bill>();
+		this.bList = new ArrayList<Bill>();
 
 	}
 
@@ -81,14 +81,23 @@ public class Customer implements IDisplay {
 			total += this.bList.get(i).getBillAmount();
 
 		}
-		
+
 		this.setTotalAmount(total);
 	}
 
 	@Override
 	public void display() {
-		for(int i=0;i<bList.size();i++) {
-			System.out.println(bList.get(i).billDisplay());
+		calculateBill();
+		System.out.println("Customer Id : " + this.getCustomerID() + "\nCustomer Full Name : " + this.getFullName()
+				+ "\nCustomer Email ID : " + this.getCustomerID()+"\n");
+		System.out.println("Bill Details :::\n");
+		for (int i = 0; i < bList.size(); i++) {
+			if (bList.size() > 0) {
+				System.out.println(bList.get(i).billDisplay());
+				System.out.println("Total Bill Amount : "+this.getTotalAmount());
+			} else {
+				System.out.println("There is no Outstanding Bill");
+			}
 		}
 
 	}

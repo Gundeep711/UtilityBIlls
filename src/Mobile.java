@@ -59,12 +59,12 @@ public class Mobile extends Bill {
 	}
 
 	public String billDisplay() {
-		String MobileBillDetails = "" + " Bill Id : " + this.getBillID() + "\r\n" + "	Bill Date : "
-				+ this.getBillDate() + "\r\n" + "	Bill Type : " + this.getBillType() + "\r\n" + "	Bill Amount : $"
-				+ this.getBillAmount() + "\r\n" + "	Manufacturer Name : " + this.getManufacturerName() + "\r\n"
-				+ "	Plane Name : " + this.getPlanName() + "\r\n" + "	Mobile Number : +" + this.getMobileNumber()
-				+ "\r\n" + "	Internet Usage : " + this.getDataUsed() + " GB\r\n" + "	Minutes Usage : "
-				+ this.getMinuteUsed() + " minutes\r\n";
+		String MobileBillDetails = "" + "Bill Id : " + this.getBillID() + "\n" + "	Bill Date : "
+				+ this.getBillDate() + "\n" + "	Bill Type : " + this.getBillType() + "\n" + "	Bill Amount : $"
+				+ this.getBillAmount() + "\n" + "	Manufacturer Name : " + this.getManufacturerName() + "\n"
+				+ "	Plan Name : " + this.getPlanName() + "\r\n" + "	Mobile Number : +" + this.getMobileNumber()
+				+ "\n" + "	Internet Usage : " + this.getDataUsed() + " GB\n" + "	Minutes Usage : "
+				+ this.getMinuteUsed() + " minutes\n";
 
 		return MobileBillDetails;
 	}
