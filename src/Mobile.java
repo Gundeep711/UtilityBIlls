@@ -42,7 +42,6 @@ public class Mobile extends Bill {
 		MobileNumber = mobileNumber;
 	}
 
-	
 	public double getDataUsed() {
 		return DataUsed;
 	}

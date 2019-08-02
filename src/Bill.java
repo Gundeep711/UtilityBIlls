@@ -1,6 +1,5 @@
 import java.util.Date;
 
-
 public class Bill {
 	private int BillID;
 	private Date BillDate;
