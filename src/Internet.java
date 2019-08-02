@@ -2,6 +2,7 @@ import java.util.Date;
 
 public class Internet extends Bill {
 
+	
 	private String ProviderName;
 	private double usage;
 

@@ -85,21 +85,46 @@ public class Customer implements IDisplay {
 		this.setTotalAmount(total);
 	}
 
+	public void sorting() {
+
+		for (int i = 1; i < this.bList.size(); i++) {
+
+			for (int j = i; j > 0; j--) {
+				if (this.bList.get(j).getBillID() < this.bList.get(j - 1).getBillID()) {
+					Bill temp = this.bList.get(j);
+					this.bList.set(j, this.bList.get(j - 1));
+					this.bList.set(j - 1, temp);
+
+				}
+			}
+		}
+
+	}
+
 	@Override
 	public void display() {
 		calculateBill();
 		System.out.println("Customer Id : " + this.getCustomerID() + "\nCustomer Full Name : " + this.getFullName()
-				+ "\nCustomer Email ID : " + this.getCustomerID()+"\n");
+				+ "\nCustomer Email ID : " + this.getCustomerID() + "\n");
 		System.out.println("Bill Details :::\n");
-		for (int i = 0; i < bList.size(); i++) {
-			if (bList.size() > 0) {
-				System.out.println(bList.get(i).billDisplay());
-				System.out.println("Total Bill Amount : "+this.getTotalAmount());
-			} else {
-				System.out.println("There is no Outstanding Bill");
+		if (bList.size() > 0) {
+
+			this.sorting();
+			for (int i = 0; i < bList.size(); i++) {
+				if (bList.size() > 0) {
+					System.out.println(bList.get(i).billDisplay());
+
+				}
 			}
+			System.out.println("\n************************************");
+			System.out.println("Total Bill Amount : " + this.getTotalAmount());
+			System.out.println("\n************************************\n");
+
 		}
 
+		else {
+			System.out.println("Note :: There is no outstading bill !!");
+		}
 	}
 
 }

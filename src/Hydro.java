@@ -2,6 +2,7 @@ import java.util.Date;
 
 public class Hydro extends Bill {
 
+	
 	private String AgencyName;
 	private double UnitConsumed;
 
