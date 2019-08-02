@@ -85,6 +85,7 @@ public class Customer implements IDisplay {
 		this.setTotalAmount(total);
 	}
 
+	
 	public void sorting() {
 
 		for (int i = 1; i < this.bList.size(); i++) {
