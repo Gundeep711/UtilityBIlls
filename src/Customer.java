@@ -85,12 +85,12 @@ public class Customer implements IDisplay {
 		this.setTotalAmount(total);
 	}
 
-	public void sorting() {
+	public void sortbillAmount() {
 
 		for (int i = 1; i < this.bList.size(); i++) {
 
 			for (int j = i; j > 0; j--) {
-				if (this.bList.get(j).getBillID() < this.bList.get(j - 1).getBillID()) {
+				if (this.bList.get(j).getBillAmount() < this.bList.get(j - 1).getBillAmount()) {
 					Bill temp = this.bList.get(j);
 					this.bList.set(j, this.bList.get(j - 1));
 					this.bList.set(j - 1, temp);
@@ -100,7 +100,8 @@ public class Customer implements IDisplay {
 		}
 
 	}
-
+	
+	
 	@Override
 	public void display() {
 		calculateBill();
@@ -108,8 +109,7 @@ public class Customer implements IDisplay {
 				+ "\nCustomer Email ID : " + this.getCustomerID() + "\n");
 		System.out.println("Bill Details :::\n");
 		if (bList.size() > 0) {
-
-			this.sorting();
+			this.sortbillAmount();
 			for (int i = 0; i < bList.size(); i++) {
 				if (bList.size() > 0) {
 					System.out.println(bList.get(i).billDisplay());
@@ -124,7 +124,10 @@ public class Customer implements IDisplay {
 
 		else {
 			System.out.println("Note :: There is no outstading bill !!");
+			System.out.println("************************************\n");
 		}
 	}
+	
+	
 
 }
